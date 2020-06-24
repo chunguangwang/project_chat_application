@@ -41,8 +41,9 @@ io.on('connect', (socket) => {
     const user = removeUser(socket.id);
     console.log(user.ind+"------------------");
     if(user) {
-      io.to(user.room).emit('message', { user: 'Admin', text: `${user.name} has left.` });
-      io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room)});
+      console.log("logging out "+user.user.room);
+      io.to(user.user.room).emit('message', { user: 'Admin', text: `${user.user.name} has left.` });
+      io.to(user.user.room).emit('roomData', { room: user.user.room, users: getUsersInRoom(user.user.room)});
     }
   })
 });
