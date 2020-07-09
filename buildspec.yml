@@ -7,17 +7,10 @@ phases:
       - cd server && npm install && cd ..
   build:
     commands:
-      - cd client && npm run build && cd ..
+      - echo Build started on `date`
   post_build:
     commands:
-      - mv ./client/build ./build
+      - echo Post Build started on `date`
 artifacts:
-  secondary-artifacts:
-    client:
-      files:
-        - '**/*'
-      base-directory: build
-    server:
-      files:
-        - '**/*'
-      base-directory: server
+    files:
+      - '**/*'

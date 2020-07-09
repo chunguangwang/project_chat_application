@@ -12,7 +12,7 @@ class Animation extends React.Component {
     }
   
     updateAnimationState() {
-      this.setState(prevState => ({ angle: prevState.angle + 0.1 }));
+      this.setState(prevState => ({ angle: prevState.angle + 0.2 }));
       this.rAF = requestAnimationFrame(this.updateAnimationState);
     }
   
