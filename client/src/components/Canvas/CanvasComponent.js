@@ -29,9 +29,7 @@ class CanvasComponent extends React.Component {
             var approx = guess - (this.f(guess, M) / this.derivative(guess));
     
             console.log(guess);
-            // console.log(f(guess));
-            // console.log(derivative(f)(guess));
-            // console.log(approx);
+
             console.log('\n');
     
             return this.newtonsMethod(approx, M);
@@ -53,23 +51,15 @@ class CanvasComponent extends React.Component {
       this.ctx.save();
       this.ctx.beginPath();
       this.ctx.clearRect(0, 0, this.width, this.height);
-      // this.ctx.translate(this.width / 2, this.height / 2);
-      // this.ctx.rotate((angle * Math.PI) / 180);
+
       this.ctx.fillStyle = '#4397AC';
-      // this.ctx.fillRect(
-      //   -this.width / 4,
-      //   -this.height / 4,
-      //   this.width / 2,
-      //   this.height / 2
-      // );
+
       this.ctx.strokeStyle = '#4397AC';
 
-      // this.ctx.arc(this.width / 2 + 10, this.height / 2 + 75, 50, 0, 2 * Math.PI);
 
-      // https://stackoverflow.com/questions/39908575/react-canvas-wont-draw-image
-      var imageObj1 = new Image();
-      imageObj1.src = muzhuIcon;
-      this.ctx.drawImage(imageObj1, 0, 0);
+      // var imageObj1 = new Image();
+      // imageObj1.src = muzhuIcon;
+      // this.ctx.drawImage(imageObj1, 0, 0);
       this.ctx.strokeRect(170, 100, 1, 1);
 
       const anomaly = this.newtonsMethod(angle/20, angle/20);
